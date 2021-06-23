@@ -16,6 +16,12 @@ pipeline {
                                 echo "${it.user.login}"
                                 echo "${it.created_at}"
                                 
+                                def arr=it.labels
+                                for(def number: arr)
+                                {
+                                    echo "${number.name}"
+                                }
+                                
                         }
                         
                     }
