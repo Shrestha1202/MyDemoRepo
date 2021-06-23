@@ -15,11 +15,7 @@ pipeline {
                             echo "${it.title}"
                                 echo "${it.user.login}"
                                 echo "${it.created_at}"
-                                jsonobj1=${it.labels}
-                                jsonobj1.each{
-                                    def PR2="${it}"
-                                    it.each
-                                        echo "${it.name}"
+                                
                                 }
                                 
                         }
