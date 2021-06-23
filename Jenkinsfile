@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                   echo 'Running under $STAGE_NAME'
+                    echo 'Running under ${STAGE_NAME}'
                     def response = httpRequest 'https://api.github.com/repos/jenkinsci/jenkins/pulls'
                     jsonobj = readJSON text: "${response.content}"
                     jsonobj.each {
@@ -19,12 +19,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Running under $STAGE_NAME'
+                echo 'Running under ${STAGE_NAME}'
             }
         }
         stage('Deliver') {
             steps {
-                echo 'Running under $STAGE_NAME'
+                echo 'Running under ${STAGE_NAME}'
             }
         }
     }      
