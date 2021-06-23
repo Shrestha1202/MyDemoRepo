@@ -15,10 +15,6 @@ pipeline {
                             echo "${it.title}"
                                 echo "${it.user.login}"
                                 echo "${it.created_at}"
-                                def list = new JsonSlurper().parseText( "${it.labels}" )
-                                list.each
-                                {pritln it}
-                                }
                                 
                         }
                         
