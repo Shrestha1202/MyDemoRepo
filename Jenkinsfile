@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    echo 'Running under ${STAGE_NAME}'
+                    echo '${STAGE_NAME}'
                     def response = httpRequest 'https://api.github.com/repos/jenkinsci/jenkins/pulls'
                     jsonobj = readJSON text: "${response.content}"
                     jsonobj.each {
@@ -15,6 +15,12 @@ pipeline {
                             echo "${it.title}"
                                 echo "${it.user.login}"
                                 echo "${it.created_at}"
+                                jsonobj1=${it.labels}
+                                jsonobj1.each{
+                                    def PR2="${it}"
+                                    it.each
+                                        echo "${it.name}"
+                                }
                                 
                         }
                         
