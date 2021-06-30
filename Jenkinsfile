@@ -16,7 +16,7 @@ pipeline {
                     }
                 }
             }
-        }
+        
         stage('Test') {
             steps {
                 echo "Running under ${STAGE_NAME}"
