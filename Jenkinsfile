@@ -10,7 +10,7 @@ pipeline {
                     redirect_uri= java.net.URLEncoder.encode(redirect_uri, "UTF-8")
                     echo "${redirect_uri}"
                     def response = httpRequest responseHandle: 'NONE', url: """https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=code&redirect_uri=${redirect_uri}&scope=user-read-private%20user-read-email""", wrapAsMultipart: false
-                    echo "${response}"
+                    echo "${response.content}"
                         }
                         
                     }
