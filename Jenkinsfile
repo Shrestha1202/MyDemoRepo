@@ -12,6 +12,8 @@ pipeline {
                         it.each
                             if(it.state == "open") {
                             echo "${it.title}"
+
+                            
                         }
                     }
                 }
